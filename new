@@ -1,0 +1,27 @@
+#pragma once
+
+#include <version>
+
+#if !defined(_STLPORT_VERSION)
+# error This file redefine <new> only for STLPort
+#endif
+
+#if !defined(_STLP_USE_EXCEPTIONS) && !defined(_STLP_NEW_DONT_THROW_BAD_ALLOC)
+# include <exception>
+namespace std
+{
+
+    class bad_alloc : public std::exception
+    {
+    public:
+        const char* what() const
+        {
+            return "bad alloc";
+        }
+    };
+
+}
+
+#endif
+
+#include <stlport/include/new>

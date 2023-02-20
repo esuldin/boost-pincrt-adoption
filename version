@@ -1,0 +1,5 @@
+#pragma once
+
+#define _STLP_WCE_EVC3
+#include <iso646.h>
+#undef _STLP_WCE_EVC3
